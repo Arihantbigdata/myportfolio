@@ -92,7 +92,7 @@
       min-height: 100vh;
       display: flex; align-items: center;
       position: relative; overflow: hidden;
-      padding: 140px 60px 70px;
+      padding: 100px 60px 60px;
     }
     .hero-bg {
       position: absolute; inset: 0; z-index: 0;
@@ -111,11 +111,11 @@
     .hero-inner {
       position: relative; z-index: 1;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 56px;
       align-items: center;
       width: 100%;
-      max-width: 1300px;
+      max-width: 1200px;
       margin: 0 auto;
     }
     .hero-content { position: relative; z-index: 1; }
@@ -180,22 +180,44 @@
       border-color: var(--accent); color: var(--accent);
       transform: translateY(-2px);
     }
-    /* ── HERO RIGHT: SINGLE PHOTO + FLOATING CHIPS ── */
+    /* ── HERO TECH CHIPS ── */
+    .hero-tech {
+      margin-top: 32px;
+    }
+    .hero-tech-label {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .hero-tech-chips {
+      display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .hero-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 14px; border-radius: 100px;
+      font-size: 0.78rem; font-weight: 700;
+      border: 1px solid; white-space: nowrap;
+    }
+    .hero-chip .chip-dot {
+      width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0;
+    }
+
+    /* ── HERO RIGHT: SINGLE PHOTO ── */
     .hero-right {
-      position: relative;
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: center;
-      padding: 30px 40px;
+      padding-left: 20px;
     }
     .hero-photo-single {
-      position: relative;
       width: 100%;
-      max-width: 400px;
+      max-width: 420px;
     }
     .hero-photo-single img {
       width: 100%;
-      height: auto;
+      height: 480px;
+      object-fit: cover;
+      object-position: center top;
       display: block;
       border-radius: 22px;
       border: 1px solid rgba(0,212,255,0.2);
@@ -902,6 +924,8 @@
       .hero-tagline { font-size: 0.95rem; }
       .hero-actions { flex-direction: column; }
       .btn-primary, .btn-secondary { justify-content: center; width: 100%; }
+      .hero-tech { margin-top: 24px; }
+      .hero-chip { font-size: 0.72rem; padding: 5px 11px; }
 
       /* company logos — stack vertically */
       .companies-row { flex-direction: column; align-items: stretch; }
@@ -912,7 +936,7 @@
         padding: 16px 20px;
         flex-direction: row; align-items: center; gap: 16px;
       }
-      .company-logo svg { width: 120px; height: 30px; }
+      .company-logo svg { width: 140px; height: 34px; }
       .company-logo .co-sub { font-size: 0.65rem; }
 
       /* stats */
@@ -1052,16 +1076,50 @@
           LinkedIn Profile
         </a>
       </div>
+
+      <!-- TECH CHIPS -->
+      <div class="hero-tech">
+        <p class="hero-tech-label">Core Technologies & Skills</p>
+        <div class="hero-tech-chips">
+          <span class="hero-chip" style="background:rgba(41,182,246,0.1);border-color:rgba(41,182,246,0.35);color:#29b6f6">
+            <span class="chip-dot" style="background:#29b6f6"></span>Snowflake
+          </span>
+          <span class="hero-chip" style="background:rgba(255,153,0,0.1);border-color:rgba(255,153,0,0.35);color:#ff9900">
+            <span class="chip-dot" style="background:#ff9900"></span>AWS
+          </span>
+          <span class="hero-chip" style="background:rgba(139,92,246,0.1);border-color:rgba(139,92,246,0.35);color:#a78bfa">
+            <span class="chip-dot" style="background:#a78bfa"></span>Generative AI & RAG
+          </span>
+          <span class="hero-chip" style="background:rgba(0,212,255,0.08);border-color:rgba(0,212,255,0.3);color:#00d4ff">
+            <span class="chip-dot" style="background:#00d4ff"></span>Data Architecture
+          </span>
+          <span class="hero-chip" style="background:rgba(52,211,153,0.1);border-color:rgba(52,211,153,0.35);color:#34d399">
+            <span class="chip-dot" style="background:#34d399"></span>Apache Iceberg
+          </span>
+          <span class="hero-chip" style="background:rgba(251,146,60,0.1);border-color:rgba(251,146,60,0.35);color:#fb923c">
+            <span class="chip-dot" style="background:#fb923c"></span>PySpark
+          </span>
+          <span class="hero-chip" style="background:rgba(139,92,246,0.1);border-color:rgba(139,92,246,0.3);color:#c084fc">
+            <span class="chip-dot" style="background:#c084fc"></span>LLMs & AI Agents
+          </span>
+          <span class="hero-chip" style="background:rgba(248,113,113,0.1);border-color:rgba(248,113,113,0.35);color:#f87171">
+            <span class="chip-dot" style="background:#f87171"></span>Airflow
+          </span>
+          <span class="hero-chip" style="background:rgba(250,204,21,0.1);border-color:rgba(250,204,21,0.3);color:#fbbf24">
+            <span class="chip-dot" style="background:#fbbf24"></span>Python
+          </span>
+          <span class="hero-chip" style="background:rgba(0,212,255,0.08);border-color:rgba(0,212,255,0.25);color:#67e8f9">
+            <span class="chip-dot" style="background:#67e8f9"></span>Vector Databases
+          </span>
+          <span class="hero-chip" style="background:rgba(255,60,0,0.1);border-color:rgba(255,60,0,0.35);color:#ff3c00">
+            <span class="chip-dot" style="background:#ff3c00"></span>Databricks
+          </span>
+        </div>
+      </div>
     </div>
     <div class="hero-right">
       <div class="hero-photo-single">
-        <img src="images/20220626_132842.jpg" alt="Arihant Shashank" />
-        <span class="expertise-float">🏗️ Data Architecture</span>
-        <span class="expertise-float">🤖 AI Engineering</span>
-        <span class="expertise-float">⚡ Data Engineering</span>
-        <span class="expertise-float purple">🧠 GenAI & RAG</span>
-        <span class="expertise-float">❄️ Snowflake Expert</span>
-        <span class="expertise-float purple">🔗 Agentic AI</span>
+        <img src="images/ericsson.jpg" alt="Arihant Shashank at Ericsson HQ" />
       </div>
     </div>
   </div>
@@ -1074,28 +1132,28 @@
 
     <!-- ERICSSON -->
     <div class="company-logo">
-      <svg width="160" height="40" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Ericsson stylised "e" mark -->
-        <path d="M12 20C12 14.477 16.477 10 22 10C27.523 10 32 14.477 32 20C32 20.69 31.924 21.362 31.779 22H14.1C14.69 25.386 17.07 28 22 28C25.1 28 27.4 26.8 28.8 25L31.4 27.2C29.4 29.6 26.1 31 22 31C16.2 31 12 26.8 12 20ZM14.2 19H29.8C29.2 15.5 26.1 13 22 13C17.9 13 14.8 15.5 14.2 19Z" fill="#0082F0"/>
-        <!-- wordmark -->
-        <text x="38" y="28" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" letter-spacing="-0.5" fill="#ffffff">ricsson</text>
+      <!-- Ericsson: official 3-bar brand mark + wordmark in brand blue -->
+      <svg width="190" height="44" viewBox="0 0 190 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0"  y="4"  width="32" height="7" rx="3.5" fill="#0082F0"/>
+        <rect x="0"  y="18" width="32" height="7" rx="3.5" fill="#0082F0"/>
+        <rect x="0"  y="32" width="32" height="7" rx="3.5" fill="#0082F0"/>
+        <text x="42" y="33" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="800" letter-spacing="-0.5" fill="#0082F0">Ericsson</text>
       </svg>
       <span class="co-sub">Global Telecom Leader</span>
     </div>
 
     <!-- WALMART -->
     <div class="company-logo">
-      <svg width="160" height="40" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- wordmark -->
-        <text x="0" y="28" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#0071CE">Walmart</text>
-        <!-- spark — 6 petals -->
-        <g transform="translate(143,20)">
-          <ellipse rx="3.2" ry="8.5" fill="#FFC220" transform="rotate(0)   translate(0,-5)"/>
-          <ellipse rx="3.2" ry="8.5" fill="#FFC220" transform="rotate(60)  translate(0,-5)"/>
-          <ellipse rx="3.2" ry="8.5" fill="#FFC220" transform="rotate(120) translate(0,-5)"/>
-          <ellipse rx="3.2" ry="8.5" fill="#FFC220" transform="rotate(180) translate(0,-5)"/>
-          <ellipse rx="3.2" ry="8.5" fill="#FFC220" transform="rotate(240) translate(0,-5)"/>
-          <ellipse rx="3.2" ry="8.5" fill="#FFC220" transform="rotate(300) translate(0,-5)"/>
+      <!-- Walmart: wordmark + official 6-petal spark in yellow -->
+      <svg width="210" height="44" viewBox="0 0 210 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <text x="0" y="33" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="800" fill="#0071CE">Walmart</text>
+        <g transform="translate(192,22)">
+          <path d="M0,-13 C3.5,-6.5 3.5,6.5 0,13 C-3.5,6.5 -3.5,-6.5 0,-13Z" fill="#FFC220"/>
+          <path d="M0,-13 C3.5,-6.5 3.5,6.5 0,13 C-3.5,6.5 -3.5,-6.5 0,-13Z" fill="#FFC220" transform="rotate(60)"/>
+          <path d="M0,-13 C3.5,-6.5 3.5,6.5 0,13 C-3.5,6.5 -3.5,-6.5 0,-13Z" fill="#FFC220" transform="rotate(120)"/>
+          <path d="M0,-13 C3.5,-6.5 3.5,6.5 0,13 C-3.5,6.5 -3.5,-6.5 0,-13Z" fill="#FFC220" transform="rotate(180)"/>
+          <path d="M0,-13 C3.5,-6.5 3.5,6.5 0,13 C-3.5,6.5 -3.5,-6.5 0,-13Z" fill="#FFC220" transform="rotate(240)"/>
+          <path d="M0,-13 C3.5,-6.5 3.5,6.5 0,13 C-3.5,6.5 -3.5,-6.5 0,-13Z" fill="#FFC220" transform="rotate(300)"/>
         </g>
       </svg>
       <span class="co-sub">World's Largest Retailer</span>
@@ -1103,11 +1161,10 @@
 
     <!-- DELOITTE -->
     <div class="company-logo">
-      <svg width="145" height="40" viewBox="0 0 145 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- wordmark in white/light -->
-        <text x="0" y="28" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#ffffff">Deloitte</text>
-        <!-- green dot -->
-        <circle cx="138" cy="26" r="6" fill="#86BC25"/>
+      <!-- Deloitte: wordmark in white + signature green dot -->
+      <svg width="185" height="44" viewBox="0 0 185 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <text x="0" y="33" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="800" fill="#ffffff">Deloitte</text>
+        <circle cx="178" cy="30" r="7" fill="#86BC25"/>
       </svg>
       <span class="co-sub">Big Four Consulting</span>
     </div>
@@ -1186,6 +1243,7 @@
           <span class="skill-tag">Data Products</span>
           <span class="skill-tag">GCP</span>
           <span class="skill-tag">Teradata</span>
+          <span class="skill-tag">Databricks</span>
         </div>
       </div>
     </div>
@@ -1735,6 +1793,15 @@
     <div class="gallery-alt">
 
       <div class="gallery-row fade-in">
+        <img src="images/ericsson.jpg" alt="Ericsson HQ, Stockholm" />
+        <div class="gallery-caption">
+          <p class="tag">Ericsson · Stockholm</p>
+          <h3>Ericsson Global Headquarters</h3>
+          <p>Outside the Ericsson Group headquarters in Stockholm — the city where many of the world's most impactful telecom and data decisions are made, and where I've been proud to contribute.</p>
+        </div>
+      </div>
+
+      <div class="gallery-row reverse fade-in">
         <img src="images/20220626_132842.jpg" alt="Jungfrau, Switzerland" />
         <div class="gallery-caption">
           <p class="tag">Adventure · 2022</p>
